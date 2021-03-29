@@ -137,4 +137,5 @@ train/
 test/
 data/
 
-
+#vscode
+.vscode/
