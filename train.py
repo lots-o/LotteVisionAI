@@ -36,6 +36,7 @@ def main(root_dir=cfg.root_dir,batch_size=cfg.batch_size,lr=cfg.lr,model_name=cf
 
     #Transforms
     train_transforms=A.Compose([
+        A.CenterCrop(230,230),
         A.RandomCrop(224,224),
         A.ElasticTransform(),         
         A.IAAPerspective(),
