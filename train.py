@@ -20,7 +20,7 @@ import os
 import fire
 
 
-def main(root_dir=cfg.root_dir,batch_size=cfg.batch_size,lr=cfg.lr,\
+def main(root_dir=cfg.root_dir,batch_size=cfg.batch_size,lr=cfg.lr,model_name=cfg.model_name,\
     weight_decay=cfg.weight_decay,n_epochs=cfg.n_epochs,log_dir=cfg.log_dir,k_fold=cfg.k_fold,\
     patience=cfg.patience,steplr_step_size=cfg.steplr_step_size,steplr_gamma=cfg.steplr_gamma,\
     save_dir=cfg.save_dir):
@@ -73,7 +73,7 @@ def main(root_dir=cfg.root_dir,batch_size=cfg.batch_size,lr=cfg.lr,\
         valid_loader=torch.utils.data.DataLoader(dataset,batch_size=batch_size,sampler=valid_sampler)
 
         #Model,Criterion,Optimizer,scheduler,regularization
-        model=Net().to(device)
+        model=Net(model_name).to(device)
         criterion=nn.CrossEntropyLoss().to(device)
         optimizer=AdamP(model.parameters(),lr=lr)
         scheduler_steplr=optim.lr_scheduler.StepLR(optimizer,step_size=steplr_step_size,gamma=steplr_gamma)
