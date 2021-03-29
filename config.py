@@ -4,6 +4,7 @@ lr=4e-04
 weight_decay=1e-2
 n_epochs=20
 k_fold=3
+model_name='efficientnet-b3'
 
 
 log_dir='Log/'
