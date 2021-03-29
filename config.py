@@ -13,5 +13,6 @@ save_dir='weights/'
 #Early stopping
 patience=5
 
+#lr_scheduler
 steplr_step_size=10
 steplr_gamma=0.1
