@@ -141,7 +141,7 @@ def main(root_dir=cfg.root_dir,batch_size=cfg.batch_size,lr=cfg.lr,model_name=cf
             
             regularization.path=os.path.join(save_dir,f'{n_fold}_fold_{epoch}_epoch.pt')
             regularization(val_loss=valid_loss,model=model)
-
+            scheduler_steplr.step()
     writer.close()
             
 if __name__ == '__main__':
