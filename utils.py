@@ -43,7 +43,7 @@ class MetricMonitor():
         self._reset()
 
     def _reset(self):
-        self._metrics : Dict[[str,dict]]=defaultdict(lambda : {'val':0,'count':0,'avg':0})
+        self._metrics : Dict[str,dict]=defaultdict(lambda : {'val':0,'count':0,'avg':0})
     
     
     def update(self,metric_name,val):
