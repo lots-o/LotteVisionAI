@@ -126,6 +126,9 @@ def main(root_dir=cfg.root_dir,batch_size=cfg.batch_size,lr=cfg.lr,model_name=cf
 
                     valid_metric_monitor.update('Loss',loss.item())
                     valid_metric_monitor.update('Accuracy',100.*correct/len(img))
+                    valid_stream.set_description(
+                    f'Test epoch : {epoch} | {valid_metric_moniotr}'
+                    )
             
             # Tensorboard
             train_loss=train_metric_monitor.metrics['Loss']['avg']
